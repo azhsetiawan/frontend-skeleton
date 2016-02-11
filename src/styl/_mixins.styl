@@ -1,0 +1,175 @@
+opacity(n)
+	-ms-filter: unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')"')
+	filter: unquote('alpha(opacity=' + round(n * 100) + ')')
+	opacity: n
+	zoom: 1
+
+// instructions: background-transparency: black, alpha = .3
+background-transparency(color, alpha = 1)
+	ms-color = argb(color, alpha)
+	background rgb(color)
+	background rgba(color, alpha)
+	.lt-ie8 &
+		zoom 1
+	.lt-ie9 &
+		background transparent
+		filter s('progid:DXImageTransform.Microsoft.gradient(startColorstr=%s,endColorstr=%s)', ms-color, ms-color)
+	&:nth-child(n)
+		filter none
+
+hex(decimal)
+	hex-value = ('0') ('1') ('2') ('3') ('4') ('5') ('6') ('7') ('8') ('9') ('A') ('B') ('C') ('D') ('E') ('F')
+	unquote(hex-value[floor(decimal / 16)] + hex-value[floor(decimal % 16)])
+
+argb(color, alpha = 1)
+	unquote('#') + hex(alpha * 255) + hex(red(color)) + hex(green(color)) + hex(blue(color))
+
+
+// RESPONSIVE ----------------------
+
+// use sparingly
+$phone-down = 'screen and (max-width: ' + $phone-width + ')'
+$tablet-down = 'screen and (max-width: ' + ($desktop-width - .062) + ')'
+
+// your main media queries
+$tablet-up = 'screen and (min-width: ' + $tablet-width + ')'
+$desktop-up = 'screen and (min-width: ' + $desktop-width + ')'
+$desktop-large-up = 'screen and (min-width: ' + $desktop-large-width + ')'
+
+
+
+// LAYOUT ----------------------
+
+// instructions: use as normal
+width()
+	if arguments == 0
+		width: 0
+	else if arguments == 'auto' || arguments 'auto !important'
+		width: arguments
+	else if unit(arguments) is '%'
+		width: arguments
+	else if unit(arguments) is 'px'
+		width: arguments
+		width: (remove-unit(arguments)*$rem) rem
+	else if unit(arguments) is 'rem'
+		width: (remove-unit(arguments)*$px) px
+		width: arguments
+	else
+		width: arguments
+
+// instructions: use as normal
+height()
+	if arguments == 0
+		height: 0
+	else if arguments == 'auto' || arguments 'auto !important'
+		height: arguments
+	else if unit(arguments) is '%'
+		height: arguments
+	else if unit(arguments) is 'px'
+		height: arguments
+		height: (remove-unit(arguments)*$rem) rem
+	else if unit(arguments) is 'rem'
+		height: (remove-unit(arguments)*$px) px
+		height: arguments
+	else
+		height: arguments
+
+// instructions: use as normal
+padding(args...)
+	// save user input default
+	default = args[0..length(args)]
+	n = -1
+	for prop in args
+		n = n + 1
+		// if 0, remove unit and set to 0
+		if args[n] == 0
+			args[n] = 0
+		else
+			if unit(prop) is 'px'
+				unit-check = 'px'
+				args[n] = (remove-unit(args[n])*$rem) rem; // convert to rem
+			else if unit(prop) is 'rem'
+				unit-check = 'rem'
+				args[n] = (remove-unit(args[n])*$px) px; //convert to px
+			else if unit(prop) is '%'
+				// no convert, leave as is
+				unit-check = '%'
+
+	if unit-check == 'px'
+		padding: default
+		padding: args
+	else if unit-check == 'rem'
+		padding: args
+		padding: default
+	else if unit-check == '%'
+		padding: default
+	else
+		// if no px, rem, or % units exist, set to 0
+		padding: 0
+
+// instructions: use as normal
+margin(args...)
+	// save user input default
+	default = args[0..length(args)]
+	n = -1
+	for prop in args
+		n = n + 1
+		// if 0, remove unit and set to 0
+		if args[n] == 0
+			args[n] = 0
+		else if args[n] == 'auto'
+			unit-check = 'auto'
+			args[n] = prop
+		else if unit(prop) is 'px'
+			unit-check = 'px'
+			args[n] = (remove-unit(args[n])*$rem) rem; // convert to rem
+		else if unit(prop) is 'rem'
+			unit-check = 'rem'
+			args[n] = (remove-unit(args[n])*$px) px; //convert to px
+		else if unit(prop) is '%'
+			// no convert, leave as is
+			unit-check = '%'
+
+	if unit-check == 'px'
+		margin: default
+		margin: args
+	else if unit-check == 'rem'
+		margin: args
+		margin: default
+	else if unit-check == '%'
+		margin: default
+	else if unit-check == 'auto'
+		j = -1
+		for val in args
+			j = j + 1
+			if args[j] == 0
+				unit-check = 'zero'
+		if unit-check == 'zero'
+			// if zero value exists, don't convert
+			margin: default
+		else
+			margin: default
+			margin: args
+	else
+		// if no px, rem, auto, or % exist, set to 0
+		margin: 0
+
+
+// TYPOGRAPHY ----------------------
+
+// instructions: use as normal
+font-size()
+	if arguments == 0
+		font-size: 0
+	else if arguments == 'inherit'
+		font-size: arguments
+	else if unit(arguments) is '%'
+		font-size: arguments
+	else if unit(arguments) is 'px'
+		font-size: arguments
+		font-size: (remove-unit(arguments)*$rem) rem
+	else if unit(arguments) is 'rem'
+		font-size: (remove-unit(arguments)*$px) px
+		font-size: arguments
+	else
+		font-size: arguments

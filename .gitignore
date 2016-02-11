@@ -1,0 +1,15 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+.DS_Store
+node_modules
+bower_components
+
+
+dist/
+.idea
+*.iml
+src/css
+src/js/vendor
+src/js/scripts.concat.js
+src/manifest.json

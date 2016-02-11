@@ -1,0 +1,35 @@
+.logo-component a
+	display inline-block
+	primaryColorText()
+	text-decoration none
+	font-size 18px
+
+header .logo-component
+	float left
+
+	@media $desktop-up
+		float none
+
+	a
+		margin-left rem(20px)
+		line-height 44px
+
+		@media $tablet-down
+			img
+				display none
+
+		@media $desktop-up
+			{$ir}
+			line-height 1.45
+			margin-left 0
+			padding 70px 0 50px
+
+footer .logo-component a
+	padding-bottom rem(20px)
+	{$ir}
+
+	@media $tablet-up
+		padding-bottom rem(32px)
+
+	@media $desktop-up
+		padding-bottom rem(50px)

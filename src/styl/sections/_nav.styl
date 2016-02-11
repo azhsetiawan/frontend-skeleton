@@ -1,0 +1,219 @@
+nav a
+	text-decoration none
+
+// change collapse breakpoint to collapse for tablet -------------------------
+@media $tablet-down
+	.navbar-header
+		float none
+
+	.navbar-left,
+	.navbar-right
+		float none !important
+
+	.navbar-toggle
+		display: block
+
+	.navbar-collapse
+		border-top 1px solid transparent
+		box-shadow inset 0 1px 0 rgba(255,255,255,0.1)
+
+	.navbar-fixed-top
+		top 0
+		border-width 0 0 1px
+
+	.container-fluid > .navbar-header,
+	.container-fluid > .navbar-collapse
+		margin-right -10px
+		margin-left -10px
+
+	.navbar-collapse.collapse
+		display none !important
+
+	.navbar-nav
+		float none !important
+		margin 7.5px -10px
+
+	.navbar-nav > li
+		float none
+
+	.navbar-nav > li > a
+		padding-top 10px
+		padding-bottom 10px
+
+	.collapse.in
+		overflow-y auto !important
+		display block !important
+
+
+// nav bar -------------------------
+.navbar
+	min-height 43px
+	border-width 0 0 3px
+	margin-bottom 0
+
+	@media $desktop-up
+		height 220px
+
+.navbar-nav
+	margin-top 0
+	margin-bottom 0
+	text-transform uppercase
+
+	@media $desktop-up
+		float none
+		text-align center
+
+.navbar-default
+	background-color #fff
+	primaryColorBorder()
+
+
+// nav toggles -------------------------
+.navbar-header
+	@media $desktop-up
+		float none
+		text-align center
+
+	.navbar-toggle
+		float right
+		margin 0
+		border-width 0 1px 0 0
+		padding 12px 14px
+		border-color $navBorderColor
+
+		&:last-child
+			border-left-width 1px
+
+	.navbar-toggle--main
+		float left
+		padding 11px 10px 10px 16px
+
+
+// nav icons -------------------------
+.icomoon-dropdown-nav
+	font-size 8px
+	margin-left rem(4px)
+
+.icomoon-menu
+.icomoon-globe
+.icomoon-map-pin
+.icomoon-dropdown-nav
+.icomoon-shopping-cart
+	display inline-block
+	vertical-align middle
+
+
+// nav links and dropdowns -------------------------
+.navbar-default .navbar-nav > .active > a,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > li > a:hover
+	// remove background color from "a" so we can add it to "li"
+	background none
+
+.navbar-default .navbar-nav > .active,
+.dropdown-menu > .active,
+.dropdown-menu > li:hover,
+.dropdown-menu > .active > a:focus
+	background-color $navLinksActiveBgColor
+
+@media $desktop-up
+	.navbar-default .navbar-nav > .active,
+	.navbar-default .navbar-nav > .active > a,
+	.navbar-default .navbar-nav > .active > a:hover,
+	.navbar-default .navbar-nav > .active > a:focus
+		background none
+		primaryColorText()
+
+	.dropdown-menu
+		min-width 100%
+
+
+.navbar-nav,
+.dropdown-menu
+
+	li
+		a
+			font-size 16px
+			border-top 1px solid $navBorderColor
+			white-space normal
+
+			@media $desktop-up
+				border 0
+
+			.icomoon-chevron-right
+				float right
+				margin-top 2px
+
+				@media $desktop-up
+					display none
+
+			.caret
+				float right
+				margin 8px 5px 0 0
+
+				@media $desktop-up
+					float none
+					margin 0 0 0 5px
+
+
+		&:first-child > a
+			border-top 0
+
+
+// nav links -------------------------
+.navbar-nav li a
+	padding 10px 15px
+
+@media $desktop-up
+	#navbar-collapse-main
+		text-align center
+
+		.navbar-nav > li
+			float none
+			display inline-block
+
+			a
+				padding 10px 14px
+
+@media $desktop-large-up
+	#navbar-collapse-main .navbar-nav > li a
+		padding 10px 28px
+
+
+// dropdowns (language, location, and main) -------------------------
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus
+	color inherit
+
+// make dropdowns look like nav links for phone and tablet
+@media $tablet-down
+	.dropdown-menu--tablet
+		position static
+		float none
+		width auto
+		margin-top 0
+		background-color transparent
+		border 0
+		box-shadow none
+
+	// expand by default
+	.navbar-collapse-secondary .dropdown-menu
+		display block
+
+.navbar-nav .dropdown-menu > li > a,
+.navbar-nav .dropdown-menu .dropdown-header,
+.navbar-nav .open .dropdown-menu > li > a,
+.navbar-nav .open .dropdown-menu .dropdown-header
+	padding 10px
+
+.navbar-nav .dropdown-menu > li > a
+	line-height 20px
+
+.navbar-default .navbar-nav .dropdown-menu > li > a
+	color #777
+
+.dropdown-menu
+	padding 0
+// END (make dropdowns look like nav links for phone and tablet)

@@ -1,0 +1,19 @@
+.title-component
+	text-align center
+
+	h1, h2, h3, h4
+		primaryColorText()
+
+	h1
+		font-size 35px
+		margin-bottom rem(24px)
+		text-transform uppercase
+
+		@media $desktop-up
+			margin-bottom rem(30px)
+
+		span
+			font-size 18px
+			display block
+			color $primaryTextColor
+			text-transform none

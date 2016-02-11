@@ -1,0 +1,102 @@
+// ----------------------------
+// BASE - elrements that don't have classes or IDs
+// ----------------------------
+html
+	margin 0
+	padding 0
+	font-size 15px
+
+	// momentum scrolling for iOS
+	overflow-y scroll /* has to be scroll, not auto */
+	-webkit-overflow-scrolling touch
+
+	// proper font weight and smoothing rendering
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+	only screen and ( min-device-pixel-ratio: 1.25),
+	only screen and ( min-resolution: 200dpi),
+	only screen and ( min-resolution: 1.25dppx)
+		-webkit-font-smoothing subpixel-antialiased
+		-moz-osx-font-smoothing grayscale
+
+	@media $tablet-up
+		font-size $font-size-base
+
+	@media $desktop-up
+		font-size $font-size-base
+
+body
+	font-size 1rem
+	fontFamilyBody($direct: true)
+	font-style normal
+	font-weight 400
+	line-height 1.45
+	color #6c6764
+
+main
+	padding 38px 0 76px
+	border-bottom 3px solid
+	primaryColorBorder()
+
+	@media $tablet-up
+		padding 48px 0 96px
+
+	@media $desktop-up
+		padding 60px 0 120px
+
+
+// type-scale.com
+p
+	margin-bottom 1.3rem
+
+h1
+h2
+h3
+h4
+	fontFamilyHeader()
+	margin 1.414rem 0 0.5rem
+	line-height 1.2
+
+h1
+	margin-top 0
+	font-size 1.602rem
+
+h2
+	font-size 1.424rem
+
+h3
+	font-size 1.266rem
+
+h4
+	font-size 1.125rem
+
+small
+.font_small
+	font-size 0.889rem
+// end type-scale
+
+
+h2
+	font-size 18px
+
+	span
+		font-size 14px
+		display block
+		font-weight 400
+
+p
+	margin-top 0
+
+ul
+ol
+	padding 0
+	margin 0
+	list-style-type none
+
+a
+	text-decoration underline
+
+iframe
+	display block // remove whitespace under iframe

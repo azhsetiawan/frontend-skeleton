@@ -1,0 +1,145 @@
+// ------ primary colors - header/footer borders, promo background, masthead overlay background,
+
+$primaryColor_fallback = #555
+
+$primaryColor_blue = #4a7999
+$primaryColor_navy = #495062
+$primaryColor_red = #c15252
+$primaryColor_orange = #a25d42
+$primaryColor_green = #547f54
+$primaryColor_maroon = #773c3c
+
+primaryColorBackground()
+	background $primaryColor_fallback
+
+	.color1 &
+		background $primaryColor_blue
+
+	.color2 &
+		background $primaryColor_navy
+
+	.color3 &
+		background $primaryColor_red
+
+	.color4 &
+		background $primaryColor_orange
+
+	.color5 &
+		background $primaryColor_green
+
+	.color6 &
+		background $primaryColor_maroon
+
+primaryColorTranslucentBackground()
+	background-transparency($primaryColor_fallback, 0.7)
+
+	.color1 &
+		background-transparency($primaryColor_blue, 0.7)
+
+	.color2 &
+		background-transparency($primaryColor_navy, 0.7)
+
+	.color3 &
+		background-transparency($primaryColor_red, 0.7)
+
+	.color4 &
+		background-transparency($primaryColor_orange, 0.7)
+
+	.color5 &
+		background-transparency($primaryColor_green, 0.7)
+
+	.color6 &
+		background-transparency($primaryColor_maroon, 0.7)
+
+
+primaryColorBorder()
+	border-color $primaryColor_fallback
+
+	.color1 &
+		border-color $primaryColor_blue
+
+	.color2 &
+		border-color $primaryColor_navy
+
+	.color3 &
+		border-color $primaryColor_red
+
+	.color4 &
+		border-color $primaryColor_orange
+
+	.color5 &
+		border-color $primaryColor_green
+
+	.color6 &
+		border-color $primaryColor_maroon
+
+
+primaryColorText()
+	color $primaryColor_fallback
+
+	.color1 &
+		color $primaryColor_blue
+
+	.color2 &
+		color $primaryColor_navy
+
+	.color3 &
+		color $primaryColor_red
+
+	.color4 &
+		color $primaryColor_orange
+
+	.color5 &
+		color $primaryColor_green
+
+	.color6 &
+		color $primaryColor_maroon
+
+
+reserveBtnColors()
+	.color1 &
+	.color2 &
+	.color3 &
+	.color4 &
+	.color5 &
+	.color6 &
+		background-color #555
+		border-color #999
+
+
+// ------ things that stay the same between colors
+$primaryTextColor = #6c6764		// main body text
+$secondaryTextColor = #fff		// text on $primaryColor background
+$supportTextColor = #5F5D5D
+$backgroundGrayColor = #F3F2F2
+
+// BUTTON COLOR VARIABLES --------------
+$primaryBtnColor = #5F5D5D
+$secondaryBtnColor = #7D7773
+$tertiaryBtnColor = #A8A3A0
+$supportBtnColor = #5F5D5D
+$inactiveBtnColor = #A8A3A0
+
+// Checkout step colors
+$checkoutStepsBackgroundActive = #8d7e69
+$checkoutStepsTextColor = #A8A3A0
+$checkoutStepsBorderColor = #c1c1c1
+
+
+// nav
+$navBorderColor = #ddd
+$navLinksActiveBgColor = #e7e7e7
+
+
+// service tabs component
+$serviceTabTabBorderColor = #8c7e66
+$serviceTabInactiveTabBackgroundColor = #fff
+$serviceTabActiveTabBackgroundColor = #8c7e66
+
+
+// global footer
+$globalFooterTextColor = #ccc
+
+// error or success colors
+$errorBackgroundColor = #FAE2E2
+$errorTextColor = #BF5354

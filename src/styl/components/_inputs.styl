@@ -1,0 +1,186 @@
+// ------------------------
+// INPUT RESET STYLES FOR BOOTSTRAP
+// from https://github.com/flatlogic/awesome-bootstrap-checkbox
+// ------------------------
+// .radio input[type="radio"]
+// .radio-inline input[type="radio"]
+.checkbox input[type="checkbox"]
+.checkbox-inline input[type="checkbox"]
+	position relative
+	margin 0
+
+.checkbox
+
+	label
+		display inline-block
+		vertical-align middle
+		position relative
+		padding-left 30px
+
+		&:before
+			content ""
+			position absolute
+			width 20px
+			height 20px
+			left 0
+			border 1px solid #cccccc
+			border-radius 0
+			background-color #fff
+			transition border 0.15s ease-in-out, color 0.15s ease-in-out
+
+		&:after
+			position absolute
+			width 20px
+			height 20px
+			left 2px
+			top -1px
+			font-size 11px
+			color #555
+
+	&.checkbox-circle
+		label
+			&:before
+				border-radius 50%
+
+	&.checkbox-inline
+		margin-top 0
+
+.checkbox
+	input[type="checkbox"]
+	input[type="radio"]
+		border 0
+		clip rect(0 0 0 0)
+		height 1px
+		margin -1px
+		overflow hidden
+		padding 0
+		position absolute
+		width 1px
+
+		&:focus + label:before
+			// outline thin dotted
+			// outline 5px auto focus-ring-color
+			outline-offset -2px
+
+		&:checked + label:after
+			font-family "icomoon"
+			content "\e116"
+			font-size 16px
+
+		&:disabled + label
+			opacity 0.65
+
+		&:disabled + label:before
+			background-color #eeeeee
+			cursor not-allowed
+
+.checkbox-primary input[type="checkbox"]:checked + label:before,
+.checkbox-primary input[type="radio"]:checked + label:before
+	background-color #337ab7
+	border-color #337ab7
+
+.checkbox-primary input[type="checkbox"]:checked + label:after,
+.checkbox-primary input[type="radio"]:checked + label:after
+	color #fff
+
+.checkbox-danger input[type="checkbox"]:checked + label:before,
+.checkbox-danger input[type="radio"]:checked + label:before
+	background-color #d9534f
+	border-color #d9534f
+
+.checkbox-danger input[type="checkbox"]:checked + label:after,
+.checkbox-danger input[type="radio"]:checked + label:after
+	color #fff
+
+.checkbox-info input[type="checkbox"]:checked + label:before,
+.checkbox-info input[type="radio"]:checked + label:before
+	background-color #5bc0de
+	border-color #5bc0de
+
+.checkbox-info input[type="checkbox"]:checked + label:after,
+.checkbox-info input[type="radio"]:checked + label:after
+	color #fff
+
+.checkbox-warning input[type="checkbox"]:checked + label:before,
+.checkbox-warning input[type="radio"]:checked + label:before
+	background-color #f0ad4e
+	border-color #f0ad4e
+
+.checkbox-warning input[type="checkbox"]:checked + label:after,
+.checkbox-warning input[type="radio"]:checked + label:after
+	color #fff
+
+.checkbox-success input[type="checkbox"]:checked + label:before,
+.checkbox-success input[type="radio"]:checked + label:before
+	background-color #5cb85c
+	border-color #5cb85c
+
+.checkbox-success input[type="checkbox"]:checked + label:after,
+.checkbox-success input[type="radio"]:checked + label:after
+	color #fff
+
+.radio
+	margin 0
+
+input[type="checkbox"].styled:checked + label:after
+// input[type="radio"].styled:checked + label:after
+	font-family 'icomoon'
+	content "\e116"
+
+input[type="checkbox"] .styled:checked + label:before
+// input[type="radio"] .styled:checked + label:before
+	color #fff
+
+input[type="checkbox"] .styled:checked + label:after
+// input[type="radio"] .styled:checked + label:after
+	color #fff
+
+// CUSTOM CHECKBOXES
+.checkbox--signin
+	padding-left 3px
+
+// CUSTOM RADIOS
+@css {
+	.radio-checkout {
+		font-size: 16px;
+	}
+}
+
+.radio--checkout
+	font-family 'Montserrat', serif
+	padding 0 6px 0 3px
+
+	@media $tablet-up
+		height 46px
+
+	label
+		padding 13px 0 0 26px
+
+		@media $tablet-up
+			padding-top 11px
+
+	input[type='radio']
+		margin-left -24px
+
+		@media $tablet-up
+			margin-left -26px
+
+.radio__group.input-group-addon
+	padding-left 3px
+	background-color transparent
+	border none
+
+	input
+		font-size 16px
+
+// REMOVE NUMBER INPUT SPINNERS
+input[type=number]
+input[type=date]
+	&:-webkit-inner-spin-button
+	&:-webkit-outer-spin-button
+		-webkit-appearance none
+		margin 0
+
+#date-time-edit
+input:-webkit-datetime-edit
+	text-transform uppercase

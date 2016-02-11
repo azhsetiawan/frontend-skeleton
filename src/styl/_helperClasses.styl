@@ -1,0 +1,148 @@
+
+// bootstrap responsive image additions
+.img-responsive
+	width 100%
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden
+	border 0
+	clip rect(0 0 0 0)
+	height 1px
+	margin -1px
+	overflow hidden
+	padding 0
+	position absolute
+	width 1px
+	opacity 0.1
+
+.shrink
+	transform scale(0.8, 0)
+	transition all .2s ease-out
+
+.area-link
+	position relative
+
+	& > a:first-child
+		absolute top bottom
+		width 100%
+		z-index 10
+		height 100%
+		display block
+
+.ie10 .area-link > a:first-child
+    background-image url('../../images/ui/blank.gif')
+
+
+// COLOR BG FOR TESTING
+.orange
+	background orange
+.lime
+	background lime
+.red
+	background red
+.purple
+	background purple
+.grey
+	background gray
+.blue
+	background blue
+.yellow
+	background yellow
+
+
+.b-border
+	border-bottom 1px solid $primaryBtnColor
+
+.col-centered
+	float none
+	margin 0 auto
+
+.vertical-align
+	display flex
+	align-items center
+
+.inline-block
+	display inline-block
+
+// Table elements
+.table
+	display table
+.table-row
+	display table-row
+.table-cell
+	display table-cell
+
+// SPACING
+.margin-05
+	margin 8px
+.margin-1
+	margin 16px
+
+.margin-y1
+	margin 16px 0
+.margin-y2
+	margin 32px 0
+.margin-y3
+	margin 48px 0
+
+.t-margin-1
+	margin-top 16px
+.t-margin-2
+	margin-top 32px
+.t-margin-3
+	margin-top 48px
+.t-margin-4
+	margin-top 64px
+.t-margin-5
+	margin-top 80px
+
+.b-margin-1
+	margin-bottom 16px
+.b-margin-2
+	margin-bottom 32px
+.b-margin-3
+	margin-bottom 48px
+.b-margin-4
+	margin-bottom 64px
+.b-margin-5
+	margin-bottom 80px
+
+.padding-05
+	padding 8px
+.padding-1
+	padding 16px
+.padding-y1
+	padding 16px 0
+.padding-y2
+	padding 32px 0
+.padding-y3
+	padding 48px 0
+.r-padding-10
+	padding-right 10px
+.l-padding-10
+	padding-left 10px
+
+
+
+// Alignment
+.text-left
+	text-align left
+.text-right
+	text-align right
+.text-center
+	text-align center
+.text-justify
+	text-align justify
+.text-nowrap
+	white-space nowrap
+
+
+// Transformation
+.text-lowercase
+	text-transform lowercase
+.text-uppercase
+	text-transform uppercase
+.text-capitalize
+	text-transform capitalize
