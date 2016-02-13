@@ -15,7 +15,7 @@ This Grunt task helps simplify things.
 You may already have these installed on your system. If not, you'll have to install them.
 
 * Node.js - [Install Node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager)
-* Grunt-cli and Grunt (`npm install grunt-cli -g`)
+* Grunt-cli, Grunt, and Bower (`npm install -g grunt-cli bower`)
 
 ## Getting started
 
@@ -27,7 +27,7 @@ Clone this repo, cd to the directory, run `bower install` then `npm install` to 
 
 ```sh
 git clone https://github.com/nallie/gfrontend-skeleton.git
-cd grunt-email-workflow
+cd frontend-skeleton
 bower install
 npm install
 ```
